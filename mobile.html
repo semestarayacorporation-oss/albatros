@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albatros Mobile App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans antialiased text-gray-800">
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-2xl relative flex flex-col overflow-hidden">
+        
+        <div class="bg-indigo-900 text-white p-6 rounded-b-3xl shadow-lg relative">
+            <a href="index.html" class="absolute top-4 right-4 text-xs text-indigo-300 hover:text-white">&larr; Kembali</a>
+            <div class="flex items-center gap-3 mt-4">
+                <div class="w-12 h-12 bg-white text-indigo-900 rounded-full flex items-center justify-center font-black text-2xl shadow-inner">AE</div>
+                <div>
+                    <h1 class="text-xl font-bold uppercase tracking-wide">Albatros Express</h1>
+                    <p class="text-[10px] text-indigo-200 uppercase tracking-widest">Mobile Utility</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-6 flex-1 space-y-6">
+            <div class="bg-blue-50 border border-blue-100 p-4 rounded-2xl shadow-sm">
+                <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    Lacak Kiriman
+                </h3>
+                <input type="text" placeholder="No. Resi (ZLG-XXX)" class="w-full p-3 rounded-xl border border-blue-200 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button onclick="window.location.href='https://wa.me/628990912599?text=Halo%20Albatros,%20lacak%20resi%20saya.'" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold shadow-md">Cari Status</button>
+            </div>
+
+            <div class="bg-green-50 border border-green-100 p-4 rounded-2xl shadow-sm">
+                <h3 class="font-bold text-green-900 mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Cek Harga Kilat
+                </h3>
+                <div class="flex gap-2 mb-2">
+                    <select class="w-1/2 p-3 rounded-xl border border-green-200 bg-white"><option>JKT</option></select>
+                    <select class="w-1/2 p-3 rounded-xl border border-green-200 bg-white"><option>Tujuan</option><option>PKU</option><option>BTH</option><option>BDO</option></select>
+                </div>
+                <button onclick="window.location.href='https://wa.me/6282249549744?text=Halo%20Marketing%20Albatros,%20cek%20harga%20dong.'" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold shadow-md">Tanya WA Marketing</button>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 p-4 rounded-2xl shadow-sm mt-8">
+                <h3 class="font-bold text-gray-700 mb-4 border-b pb-2 text-center text-sm uppercase tracking-widest">Akses Staf Operasional</h3>
+                <form id="loginForm" class="space-y-3">
+                    <input type="text" id="username" placeholder="Username" class="w-full p-3 rounded-xl border border-gray-300 text-sm" required>
+                    <input type="password" id="password" placeholder="Password" class="w-full p-3 rounded-xl border border-gray-300 text-sm" required>
+                    <button type="submit" class="w-full bg-indigo-900 text-white py-3 rounded-xl font-bold shadow-md text-sm">Masuk Sistem</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-50 border-t border-gray-200 text-center">
+            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Mitra Terpercaya Kami</p>
+            <div class="flex justify-center items-center gap-4 opacity-40 grayscale">
+                <span class="font-black text-gray-800 text-sm">CorpA</span>
+                <span class="font-black text-gray-800 text-sm">IndoTech</span>
+                <span class="font-black text-gray-800 text-sm">TradeX</span>
+            </div>
+            <p class="text-[10px] text-gray-400 mt-6">&copy; 2026 PT. Albatros Express</p>
+        </div>
+    </div>
+    <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>
