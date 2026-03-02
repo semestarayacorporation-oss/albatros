@@ -6,12 +6,14 @@ import { loadMasterLogistics } from '../modules/master/logistics.js';
 
 // 2. Ekstraksi Modul Sales
 import { loadSalesResi } from '../modules/sales/resi.js';
-
+import { loadSalesPickup } from '../modules/sales/pickup.js';
+import { loadSalesTracking } from '../modules/sales/tracking.js'; // Pastikan file ini ada dari iterasi sebelumnya
 // 3. Ekstraksi Modul Operasional
 import { loadOpsDashboard } from '../modules/operasional/dashboard_ops.js';
 import { loadOpsOutgoing } from '../modules/operasional/outgoing.js';
 import { loadOpsDelivery } from '../modules/operasional/delivery.js';
 import { loadOpsPOD } from '../modules/operasional/pod.js';
+import { loadOpsTransit } from '../modules/operasional/transit.js';
 
 // 4. Ekstraksi Modul Finansial (AR & Treasury)
 import { loadARInvoice } from '../modules/ar/invoice.js';
@@ -39,12 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Sales Routes
     router.add('/sales-resi', loadSalesResi);
+    router.add('/sales-pickup', loadSalesPickup);
+router.add('/sales-tracking', loadSalesTracking);
     
     // Operational Routes
     router.add('/ops-dashboard', loadOpsDashboard);
     router.add('/ops-outgoing', loadOpsOutgoing);
     router.add('/ops-delivery', loadOpsDelivery);
     router.add('/ops-pod', loadOpsPOD);
+    router.add('/sales-tracking', loadSalesTracking);
+router.add('/ops-transit', loadOpsTransit);
     
     // Financial & AR Routes
     router.add('/ar-invoice', loadARInvoice);
@@ -60,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Matriks Otoritas Absolut sesuai Instruksi
     const menuStructure = [
         { label: '📊 Dashboard Ops', path: '#/ops-dashboard', roles: ['Super Admin', 'Operasional', 'CS Counter', 'Customer Service', 'Sales Executive'] },
+        { label: '🔍 Cek Tarif & Lacak', path: '#/sales-tracking', roles: ['Super Admin', 'CS Counter', 'Customer Service'] },
+   { label: '🚚 Pick Up Runsheet', path: '#/sales-pickup', roles: ['Super Admin', 'CS Counter', 'Customer Service', 'Sales Executive'] },
+{ label: '🏢 Transit & Incoming', path: '#/ops-transit', roles: ['Super Admin', 'Operasional'] },
         { label: '📦 Entri Resi Cash', path: '#/sales-resi', roles: ['Super Admin', 'CS Counter', 'Customer Service'] },
         { label: '🚛 Outgoing Manifest', path: '#/ops-outgoing', roles: ['Super Admin', 'Operasional'] },
         { label: '🛵 Dispatch Delivery', path: '#/ops-delivery', roles: ['Super Admin', 'Operasional'] },
