@@ -1,26 +1,230 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BGPL - Albatros</title>
+    <title>ALE Bugapra - Bumi Galur Pratama | Enterprise Logistics</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-pattern { background-image: radial-gradient(#4f46e5 1px, transparent 1px); background-size: 20px 20px; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
 </head>
-<body class="bg-slate-100 h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded-xl shadow-md w-96">
-        <h1 class="text-2xl font-bold text-indigo-900 mb-6 text-center">Albatros</h1>
-        <form id="loginForm" class="space-y-4">
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Username Beb</label>
-                <input type="text" id="username" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" required>
+<body class="bg-slate-50 text-gray-800 font-sans antialiased selection:bg-indigo-600 selection:text-white">
+
+    <nav class="fixed w-full z-50 glass border-b border-gray-200 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-indigo-900 text-white rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">AB</div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl text-indigo-900 tracking-tight">ALE BUGAPRA</span>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bumi Galur Pratama</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#layanan" class="text-sm font-semibold text-gray-600 hover:text-indigo-600">Layanan</a>
+                    <a href="#peta-jaringan" class="text-sm font-semibold text-gray-600 hover:text-indigo-600">Jaringan Distribusi</a>
+                    <a href="#cek-tarif" class="text-sm font-semibold text-gray-600 hover:text-indigo-600">Cek Tarif</a>
+                    <a href="#kontak" class="text-sm font-semibold text-gray-600 hover:text-indigo-600">Hubungi Kami</a>
+                    <a href="#portal-login" class="bg-indigo-900 text-white px-5 py-2.5 rounded-md font-bold text-sm shadow-md hover:bg-indigo-800 transition">Portal Klien</a>
+                </div>
             </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">apa Passwordnye ya?</label>
-                <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" required>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-indigo-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 pr-0 md:pr-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Dominasi Logistik.<br><span class="text-indigo-400">Presisi Tanpa Batas.</span>
+                </h1>
+                <p class="text-lg text-indigo-200 mb-8 max-w-lg">
+                    ALE Bugapra adalah infrastruktur logistik andalan Anda. Dari Project Cargo hingga Distribusi Retail, kami memastikan kargo Anda menguasai ruang dan waktu.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#cek-tarif" class="bg-white text-indigo-900 px-6 py-3 rounded-md font-bold shadow-lg hover:bg-gray-100 transition">Lacak & Tarif</a>
+                    <a href="#kontak" class="border border-indigo-400 text-white px-6 py-3 rounded-md font-bold hover:bg-indigo-800 transition">Request Penawaran</a>
+                </div>
             </div>
-            <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700 font-semibold">Akses Sistem</button>
-        </form>
-    </div>
+            <div class="w-full md:w-1/2 mt-12 md:mt-0">
+                <div class="bg-white rounded-xl shadow-2xl p-6 text-gray-800">
+                    <h3 class="font-bold text-lg border-b pb-2 mb-4 text-indigo-900">Lacak Aset Logistik Anda</h3>
+                    <div class="flex gap-2 mb-4">
+                        <input type="text" placeholder="Masukkan Nomor Resi (ZLG-...)" class="flex-1 p-3 border rounded-md bg-gray-50 focus:border-indigo-500">
+                        <button onclick="window.location.href='https://wa.me/628990912599?text=Halo%20CS%20ALE%20Bugapra,%20mohon%20bantu%20lacak%20resi%20saya.'" class="bg-indigo-600 text-white px-6 py-3 rounded-md font-bold">Lacak</button>
+                    </div>
+                    <p class="text-xs text-gray-500">*Untuk pelacakan mandiri mendetail, silakan login ke Portal Klien atau hubungi CS kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cek-tarif" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-indigo-900 uppercase tracking-wide">Kalkulator Tarif Publik</h2>
+                <p class="text-gray-600 mt-2">Dapatkan estimasi biaya instan untuk pengiriman Anda.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Kota Asal</label>
+                        <select class="w-full p-3 border rounded-md bg-gray-50"><option>Jakarta (Kantor Pusat)</option></select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Kota Tujuan</label>
+                        <select class="w-full p-3 border rounded-md focus:border-indigo-500">
+                            <option>Pekanbaru</option><option>Batam</option><option>Bandung</option><option>Surabaya</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Estimasi Berat (Kg)</label>
+                        <input type="number" placeholder="Contoh: 150" class="w-full p-3 border rounded-md focus:border-indigo-500">
+                    </div>
+                </div>
+                <button onclick="window.location.href='https://wa.me/6282249549744?text=Halo%20Marketing%20ALE%20Bugapra,%20saya%20ingin%20meminta%20penawaran%20harga%20pengiriman.'" class="w-full bg-green-600 text-white py-4 rounded-md font-bold text-lg shadow-md hover:bg-green-700 transition">
+                    Hitung & Request Penawaran via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="peta-jaringan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-900 uppercase tracking-wide">Jaringan Mobilisasi & Distribusi</h2>
+                <p class="text-gray-600 mt-2">Cakupan rute strategis trucking dan kargo laut ALE Bugapra di seluruh Nusantara.</p>
+            </div>
+            <div class="relative w-full h-96 bg-slate-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner flex items-center justify-center">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgMTBoNDBWMHgtNDB6IiBmaWxsPSJyZ2JhKDc5LCA3MCwgMjI5LCAwLjA1KSIvPgo8L3N2Zz4=')]"></div>
+                
+                <div class="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <span class="w-4 h-4 bg-red-500 rounded-full animate-ping absolute"></span>
+                    <span class="w-4 h-4 bg-red-600 rounded-full relative z-10 border-2 border-white shadow-md"></span>
+                    <span class="mt-2 font-bold text-indigo-900 bg-white px-2 py-1 rounded shadow text-xs">Pekanbaru Hub</span>
+                </div>
+                
+                <div class="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <span class="w-4 h-4 bg-orange-500 rounded-full relative z-10 border-2 border-white shadow-md"></span>
+                    <span class="mt-2 font-bold text-indigo-900 bg-white px-2 py-1 rounded shadow text-xs">Batam Hub</span>
+                </div>
+
+                <div class="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <span class="w-6 h-6 bg-indigo-600 rounded-full absolute animate-pulse"></span>
+                    <span class="w-5 h-5 bg-indigo-800 rounded-full relative z-10 border-2 border-white shadow-lg"></span>
+                    <span class="mt-2 font-extrabold text-indigo-900 bg-white px-3 py-1 rounded shadow-md text-sm border-b-2 border-indigo-600">JAKARTA (HQ)</span>
+                </div>
+
+                <div class="absolute top-3/4 left-[55%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <span class="w-3 h-3 bg-blue-500 rounded-full relative z-10 border-2 border-white shadow-md"></span>
+                    <span class="mt-2 font-bold text-indigo-900 bg-white px-2 py-1 rounded shadow text-xs">Bandung Hub</span>
+                </div>
+
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="50%" y1="66%" x2="25%" y2="50%" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5,5" class="opacity-50" />
+                    <line x1="50%" y1="66%" x2="33%" y2="33%" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5,5" class="opacity-50" />
+                    <line x1="50%" y1="66%" x2="55%" y2="75%" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5,5" class="opacity-50" />
+                </svg>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="bg-indigo-50 p-6 rounded-xl text-center border border-indigo-100">
+                    <p class="text-3xl font-extrabold text-indigo-600">50+</p><p class="text-sm font-bold text-gray-600 mt-1">Armada Trucking</p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl text-center border border-indigo-100">
+                    <p class="text-3xl font-extrabold text-indigo-600">99%</p><p class="text-sm font-bold text-gray-600 mt-1">SLA Delivery</p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl text-center border border-indigo-100">
+                    <p class="text-3xl font-extrabold text-indigo-600">10K+</p><p class="text-sm font-bold text-gray-600 mt-1">Tonase Terkirim</p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl text-center border border-indigo-100">
+                    <p class="text-3xl font-extrabold text-indigo-600">24/7</p><p class="text-sm font-bold text-gray-600 mt-1">Monitoring Aktif</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold uppercase tracking-wide text-indigo-400 mb-6">Pusat Komando & Komunikasi</h2>
+                    <p class="text-gray-400 mb-8">Tim ahli kami siap memberikan solusi atas setiap tantangan logistik perusahaan Anda. Hubungi divisi terkait untuk respon instan.</p>
+                    
+                    <div class="space-y-6">
+                        <a href="https://wa.me/628990912599" target="_blank" class="flex items-center gap-4 bg-slate-800 p-4 rounded-xl hover:bg-slate-700 transition cursor-pointer border border-slate-700">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.573-.187-.981-.342-1.714-.652-2.819-2.52-2.905-2.634-.086-.114-.694-.927-.694-1.766 0-.84.43-1.25.586-1.415.156-.165.338-.206.451-.206.113 0 .225 0 .319.004.1.004.234-.038.366.281.134.323.456 1.114.498 1.198.041.084.068.181.011.295-.057.114-.086.183-.171.282-.086.099-.181.218-.258.305-.084.095-.175.197-.07.38.106.182.471.778 1.012 1.258.697.621 1.282.813 1.464.899.182.086.289.068.397-.056.108-.124.469-.548.596-.736.126-.188.253-.156.419-.095.166.061 1.049.495 1.23.585.18.09.301.136.345.212.045.076.045.441-.099.846z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Operator / Customer Service</h4>
+                                <p class="text-green-400 font-mono text-sm">WA: +62 899-0912-599</p>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/6282249549744" target="_blank" class="flex items-center gap-4 bg-slate-800 p-4 rounded-xl hover:bg-slate-700 transition cursor-pointer border border-slate-700">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.573-.187-.981-.342-1.714-.652-2.819-2.52-2.905-2.634-.086-.114-.694-.927-.694-1.766 0-.84.43-1.25.586-1.415.156-.165.338-.206.451-.206.113 0 .225 0 .319.004.1.004.234-.038.366.281.134.323.456 1.114.498 1.198.041.084.068.181.011.295-.057.114-.086.183-.171.282-.086.099-.181.218-.258.305-.084.095-.175.197-.07.38.106.182.471.778 1.012 1.258.697.621 1.282.813 1.464.899.182.086.289.068.397-.056.108-.124.469-.548.596-.736.126-.188.253-.156.419-.095.166.061 1.049.495 1.23.585.18.09.301.136.345.212.045.076.045.441-.099.846z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Sales & Marketing (B2B Contract)</h4>
+                                <p class="text-blue-400 font-mono text-sm">WA: +62 822-4954-9744</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6">Request Penawaran Resmi</h3>
+                    <form onsubmit="event.preventDefault(); window.open('https://wa.me/6282249549744?text=Halo%20Marketing,%20saya%20sudah%20mengisi%20form%20request%20penawaran%20di%20website.%20Mohon%20info%20lebih%20lanjut.', '_blank');">
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Nama Perusahaan" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-md text-white focus:border-indigo-500" required>
+                            <input type="text" placeholder="Komoditas Barang" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-md text-white focus:border-indigo-500" required>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Rute Asal" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-md text-white focus:border-indigo-500" required>
+                                <input type="text" placeholder="Rute Tujuan" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-md text-white focus:border-indigo-500" required>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-md font-bold shadow-md hover:bg-indigo-700 transition">Kirim Permintaan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portal-login" class="py-24 bg-gray-200 border-t border-gray-300 relative">
+        <div class="max-w-md mx-auto px-4 relative z-10">
+            <div class="bg-white p-10 rounded-2xl shadow-2xl border border-gray-100">
+                <div class="text-center mb-8">
+                    <div class="inline-block w-12 h-12 bg-indigo-900 text-white rounded-lg flex items-center justify-center font-bold text-2xl shadow-md mx-auto mb-3">AB</div>
+                    <h2 class="text-2xl font-extrabold text-indigo-900 uppercase tracking-widest">Portal Internal</h2>
+                    <p class="text-xs font-bold text-gray-400 mt-1">OTORISASI SISTEM ALE BUGAPRA</p>
+                </div>
+
+                <form id="loginForm" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">ID Pengguna / Username</label>
+                        <input type="text" id="username" class="block w-full rounded-md border-gray-300 bg-gray-50 focus:bg-white focus:border-indigo-500 focus:ring-indigo-500 p-3 border transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Kata Sandi (Password)</label>
+                        <input type="password" id="password" class="block w-full rounded-md border-gray-300 bg-gray-50 focus:bg-white focus:border-indigo-500 focus:ring-indigo-500 p-3 border transition" required>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-900 text-white p-4 rounded-md hover:bg-indigo-800 font-extrabold uppercase tracking-widest shadow-lg transition transform hover:-translate-y-0.5">INISIASI AKSES</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-gray-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 PT. Bumi Galur Pratama (ALE Bugapra). All Rights Reserved.</p>
+            <p class="mt-2 text-xs">ZOLOG Core System Environment.</p>
+        </div>
+    </footer>
+
     <script type="module" src="/assets/js/auth.js"></script>
 </body>
 </html>
