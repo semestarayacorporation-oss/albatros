@@ -1,4 +1,4 @@
-// C. Konstruksi Navigasi Dinamis Berdasarkan Otoritas (RBAC) - MODE GRUP
+// C. Konstruksi Navigasi Dinamis Berdasarkan Otoritas (RBAC) - MODE DROPDOWN GRUP
     const sidebarMenu = document.getElementById('sidebar-menu');
     
     // Matriks Otoritas yang telah diklasifikasikan ke dalam "group"
@@ -28,7 +28,6 @@
     // Algoritma Pemilahan (Sorting & Grouping)
     let groupedMenus = {};
     menuStructure.forEach(item => {
-        // Hanya proses jika user memiliki otoritas
         if (item.roles.includes(session.role)) {
             if (!groupedMenus[item.group]) {
                 groupedMenus[item.group] = [];
@@ -37,20 +36,51 @@
         }
     });
 
-    // Render HTML Berbasis Grup
+    // Render HTML Berbasis Dropdown Accordion
     let menuHTML = '';
     for (const [groupName, items] of Object.entries(groupedMenus)) {
-        // Cetak Judul Grup (Header)
-        menuHTML += `<div class="mt-4 mb-2 px-3 text-[10px] font-extrabold text-indigo-400 uppercase tracking-widest">${groupName}</div>`;
+        // ID Unik untuk target Dropdown
+        const groupId = groupName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
         
-        // Cetak Menu di dalam Grup
+        // Cetak Tombol Header Grup (Dropdown Trigger)
+        menuHTML += `
+        <div class="mb-1">
+            <button class="dropdown-btn w-full flex justify-between items-center px-3 py-2 text-[10px] font-extrabold text-indigo-400 uppercase tracking-widest hover:bg-indigo-900/50 rounded transition outline-none" data-target="dropdown-${groupId}">
+                <span>${groupName}</span>
+                <svg class="chevron-icon w-4 h-4 transition-transform duration-300 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div id="dropdown-${groupId}" class="dropdown-content mt-1 space-y-1 block overflow-hidden">
+        `;
+        
+        // Cetak Menu di dalam Grup (Indented)
         items.forEach(item => {
-            menuHTML += `<a href="${item.path}" class="block px-3 py-2.5 mb-1 rounded-lg hover:bg-indigo-800 transition text-sm font-semibold text-indigo-100 hover:text-white flex items-center gap-2 border border-transparent hover:border-indigo-700/50">${item.label}</a>`;
+            menuHTML += `<a href="${item.path}" class="block px-3 py-2.5 rounded-lg hover:bg-indigo-800 transition text-sm font-semibold text-indigo-100 hover:text-white flex items-center gap-2 border border-transparent hover:border-indigo-700/50 ml-2">${item.label}</a>`;
         });
         
-        // Pemisah antar grup
-        menuHTML += `<div class="my-2 border-b border-indigo-800/30"></div>`;
+        // Penutup Grup & Garis Pemisah
+        menuHTML += `</div></div><div class="my-2 border-b border-indigo-800/30"></div>`;
     }
     
-    // Injeksi ke DOM
+    // Injeksi Konstruksi ke DOM
     sidebarMenu.innerHTML = menuHTML;
+
+    // Logika Mekanis Eksekusi Dropdown (Event Listeners)
+    const dropdownBtns = sidebarMenu.querySelectorAll('.dropdown-btn');
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+            const chevron = btn.querySelector('.chevron-icon');
+
+            // Eksekusi Buka/Tutup
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.classList.add('block');
+                chevron.classList.remove('-rotate-180');
+            } else {
+                content.classList.remove('block');
+                content.classList.add('hidden');
+                chevron.classList.add('-rotate-180');
+            }
+        });
+    });
